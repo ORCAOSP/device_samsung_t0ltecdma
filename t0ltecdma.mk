@@ -35,17 +35,13 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/lpm.rc:root/lpm.rc \
     $(LOCAL_PATH)/ueventd.smdk4x12.rc:recovery/root/ueventd.smdk4x12.rc
 
-# Camera FW
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/80cfw:system/etc/init.d/80cfw
-
 # Audio
-PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/configs/tiny_hw.xml:system/etc/sound/t0ltecdma
+PRODUCT_PACKAGES += \
+    tiny_hw
 
-# Gps
+# GPS
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
+    device/samsung/t0ltecdma/configs/gps.conf:system/etc/gps.conf
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/Diag_zero.cfg:system/etc/Diag_zero.cfg \
@@ -108,5 +104,6 @@ PRODUCT_COPY_FILES += \
 
 # Include common makefile
 $(call inherit-product, device/samsung/smdk4412-common/common.mk)
+$(call inherit-product, device/samsung/smdk4412-qcom-common/common.mk)
 
 $(call inherit-product-if-exists, vendor/samsung/t0ltecdma/t0ltecdma-vendor.mk)

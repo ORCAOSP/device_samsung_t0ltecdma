@@ -18,6 +18,7 @@
 # by BoardConfigVendor.mk
 
 -include device/samsung/smdk4412-common/BoardCommonConfig.mk
+-include device/samsung/smdk4412-qcom-common/BoardCommonConfig.mk
 
 LOCAL_PATH := device/samsung/t0ltecdma
 
@@ -34,6 +35,9 @@ COMMON_GLOBAL_CFLAGS += -DPROPERTY_PERMS_APPEND='{ "ril.ks.status", AID_SYSTEM, 
 
 # Camera
 COMMON_GLOBAL_CFLAGS += -DCAMERA_WITH_CITYID_PARAM
+
+# GPS
+BOARD_GPS_SET_PRIVACY := true
 
 # inherit from the proprietary version
 -include vendor/samsung/t0ltecdma/BoardConfigVendor.mk
