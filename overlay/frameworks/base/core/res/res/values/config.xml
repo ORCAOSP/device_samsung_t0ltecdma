@@ -186,5 +186,8 @@
     <!-- Values greater or equal to 0 will enable electronbeam screen-on
          animation with the specified delay (in milliseconds), -1 will disable the animation
     <integer name="config_screenOnAnimation">-1</integer> -->
+    
+    <!-- Component name of the default wallpaper. This will be ImageWallpaper if not specified -->
+    <string name="default_wallpaper_component" translatable="false">@null</string>
 
 </resources>
